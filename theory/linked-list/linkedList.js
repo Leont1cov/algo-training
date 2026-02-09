@@ -36,12 +36,28 @@ class LinkedList {
 
         return this
     }
+
+    // Метод для представления списка в массиве
+    toArray() {
+        const nodes = []
+
+        let currentNode = this.head
+
+        while (currentNode) { //пока у нас существует currentNode
+            nodes.push(currentNode)
+            currentNode = currentNode.next //когда дойдем до конца currentNode станет равен Null и цикл завершится
+        }
+
+        return nodes
+    }
+
+    // Метод для представления списка в строке
+    toString() {
+        return this.toArray().map(n => n.toString()).toString()
+    }
 }
 
 const list = new LinkedList()
 list.append("a").append("b").append("c")
 
-console.log(JSON.stringify(list))
-/*
-{"head":{"value":"a","next":{"value":"b","next":{"value":"c","next":null}}},"tail":{"value":"c","next":null}}
-*/
+console.log(list.toString())
