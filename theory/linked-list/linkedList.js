@@ -60,4 +60,4 @@ class LinkedList {
 const list = new LinkedList()
 list.append("a").append("b").append("c")
 
-console.log(list.toString())
+console.log(list.toArray())
